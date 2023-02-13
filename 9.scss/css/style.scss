@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: red;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.goku {
+  width: 65px;
+  height: 85px;
+  object-fit: cover;
+  background-image: url("/gokssj.png");
+  background-position-x: 0;
+  background-position-y: 0;
+  background-repeat: no-repeat;
+  background-color: white;
+  animation: moves, goDown;
+  animation-duration: 720ms, 1400ms;
+  animation-iteration-count: infinite, infinite;
+  animation-timing-function: steps(12), steps(6);
+  position: absolute;
+}
+
+@keyframes moves {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: -800px;
+  }
+}
+@keyframes goDown {
+  from {
+    background-position-y: 0;
+  }
+  to {
+    background-position-y: -800px;
+  }
+}

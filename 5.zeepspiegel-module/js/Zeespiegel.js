@@ -12,6 +12,11 @@ class Zeespiegel {
   }
   generateInitialHTML() {
     this.holder.insertAdjacentHTML("beforeend", `<div class="wave"></div>`);
+    this.holder.insertAdjacentHTML(
+      "afterend",
+      `<audio  autoplay><source src="" type="audio/ogg"></audio>`
+    );
+
     return this.holder.querySelector(":last-child");
   }
   setStyling() {
@@ -25,16 +30,9 @@ class Zeespiegel {
     this.htmlRef.style.backgroundColor = "red";
   }
   playWave() {
-    document.body.insertAdjacentHTML(
-      "afterbegin",
-      '<audio  autoplay><source src="../audio/mixkit-sea-swimming-loop-1181.wav" type="audio/ogg"></audio>'
-    );
-  }
-  playSong() {
-    document.body.insertAdjacentHTML(
-      "beforeend",
-      '<audio autoplay><source src="../audio/trance-20652.mp3" type="audio/ogg"></audio>'
-    );
+    let soundTag = document.querySelector("audio");
+    soundTag.src = "mixkit-sea-swimming-loop-1181.wav";
+    return soundTag;
   }
 
   setEvents() {
@@ -51,15 +49,19 @@ class Zeespiegel {
       if (this.level === 130) {
         this.playWave.currentTime = 0;
       }
-      if (this.level === 140) {
-        this.playSong();
+
+      if (this.level === 190) {
+        document.querySelector(".wave").classList.add("rainbow");
+        document.querySelector("audio").src =
+          "mixkit-retro-video-game-bubble-laser-277.wav";
       }
-      if (this.level === 210) {
+      if (this.level === 200) {
+        document.querySelector(".wave").classList.remove("rainbow");
         this.level = 10;
         this.htmlRef.style.height = this.level + "vh";
         this.htmlRef.style.backgroundColor = "blue";
-        this.playSong.currentTime = 0;
-        //this.htmlRef.classList.add = "rainbow";
+        this.playWave().currentTime = 0;
+        this.playWave().pause();
       }
     };
   }

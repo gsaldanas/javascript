@@ -1,0 +1,17 @@
+{
+  "name": "14.extra-api-oef",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "vite --open --host",
+    "clean": "rm -rf ./dist ./node_modules",
+    "build": "vite build --base ./",
+    "preview": "vite preview --open --host",
+    "deploy": "surge ./dist cocktail-api-like-gaspar.surge.sh",
+    "prebuild": "rm -rf ./dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

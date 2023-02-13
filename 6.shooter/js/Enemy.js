@@ -2,9 +2,15 @@ class Enemy {
   constructor() {
     this.holder = document.body;
     this.ref = this.init();
-    this.events();
+
+    //custom events!!!
+    this.value = Math.floor(Math.random() * 11);
+    this.killEvent = new CustomEvent("kill", {
+      detail: this.value,
+    });
     this.styling();
-    this.listEnemies = [];
+    this.events();
+    //this.listEnemies = [];
     //this.randomSpawn();
   }
 
@@ -24,8 +30,14 @@ class Enemy {
       //pointer events none toepassen
 
       this.ref.style.display = "none";
+      window.dispatchEvent(this.killEvent);
     };
+
+    window.addEventListener("kill", () => {
+      this.ref.style.filter = "sepia(100%)";
+    });
   }
+
   //styling
   styling() {
     this.ref.style.left =

@@ -1,0 +1,16 @@
+{
+  "name": "9.scss",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "vite --host --open",
+    "build": "vite build",
+    "preview": "vite preview --host --open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "reset-css": "^5.0.1"
+  }
+}

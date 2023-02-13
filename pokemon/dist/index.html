@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokemon API</title>
+    
+    
+    <script type="module" crossorigin src="./assets/index.eb7cfc06.js"></script>
+    <link rel="stylesheet" href="./assets/index.f76f8494.css">
+  </head>
+  <body>
+    <main>
+      <h1>Pokedex</h1>
+      <section class="pokemons"></section>
+      <section class="pages"></section>
+    </main>
+
+    <section class="pokemons__details is-hidden">
+      <a href="index.html" class="go-back-btn">Go back</a>
+    </section>
+    <!-- template to show pokemons -->
+    <template id="pokemonlist">
+      <article class="pokemonCard">
+        <img class="pokemonCard__img" src="%IMG%" alt="" />
+        <div class="pokmonCard__name">%NAME%</div>
+        <div class="pokemonCard__type">%TYPE%</div>
+        <a class="pokemonCard__detail" href="%URL%">details</a>
+      </article>
+    </template>
+    <!-- template details to show  -->
+    <template id="pokemonDetails">
+      <div class="pokemonCardDetails">
+        <h1>%NAME%</h1>
+        <div class="group">
+          <div class="moves">
+            <p class="title">Moves</p>
+            <ul>
+              <li>%move1%</li>
+              <li>%move2%</li>
+              <li>%move3%</li>
+              <li>%move4%</li>
+            </ul>
+          </div>
+          <div class="stats">
+            <p class="title">Stats</p>
+            <ul>
+              <li>hp:<span>%hp%</span></li>
+              <li>attack:<span>%attack%</span></li>
+              <li>deffence:<span>%deffence%</span></li>
+              <li>special:<span>%special%</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="pokemon__image">
+          <img src="%SRC%" alt="" />
+        </div>
+      </div>
+    </template>
+    <template id="pagination">
+      <div class="pag">
+        <a href="#" class="prev">previous</a>
+        <a href="#" class="next">next</a>
+      </div>
+    </template>
+    <footer>
+      <p>By Gaspar Saldaña Sandoval 4 Syntra FSD2023, pokedex v1</p>
+    </footer>
+  </body>
+</html>
